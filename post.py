@@ -10,4 +10,5 @@ tags = info["tags"]
 session_id = info["tiktoksessionid"]
 
 file = './artifact/video.mp4'
-uploadVideo(session_id, file, title, tags, verbose=True)
+print(session_id)
+# uploadVideo(session_id, file, title, tags, verbose=True)

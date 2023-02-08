@@ -47,10 +47,11 @@ jobs:
         with:
           run_id: 4127370636
 
-      - run: git pull origin master
-      - run: echo ${{env.tiktoksessionid}}
+      # - run: git pull origin master
       - run: npm install
-      - run: node tiktok.js
+      - run: |
+          pip install requests
+          node tiktok.js
 
   # upload-instagram:
   #   needs: render-video
