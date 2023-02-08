@@ -4,20 +4,20 @@ const { execSync } = require("child_process");
 require("dotenv").config();
 
 (async () => {
-  // const randomAffirmation = JSON.parse(
-  //   await fs.readFile("public/affirmation.json")
-  // );
+  const randomAffirmation = JSON.parse(
+    await fs.readFile("public/affirmation.json")
+  );
 
-  // let tags = await retrieveVideoTags(randomAffirmation.affirmation);
-  // tags = tags.map((x) => x.replace(/#/g, ""));
+  let tags = await retrieveVideoTags(randomAffirmation.affirmation);
+  tags = tags.map((x) => x.replace(/#/g, ""));
 
-  // // create info.json
-  // const info = {
-  //   title: randomAffirmation.affirmation,
-  //   tags,
-  //   tiktoksessionid: process.env.tiktoksessionid,
-  // };
-  // await fs.writeFile("public/info.json", JSON.stringify(info));
+  // create info.json
+  const info = {
+    title: randomAffirmation.affirmation,
+    tags,
+    tiktoksessionid: process.env.tiktoksessionid,
+  };
+  await fs.writeFile("public/info.json", JSON.stringify(info));
 
   execSync("python post.py", { stdio: "inherit" });
 })();
