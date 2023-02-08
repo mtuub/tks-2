@@ -1,8 +1,8 @@
 name: Create videos
 
 on:
-  # push:
-  #   branches: master
+  push:
+    branches: master
   schedule:
     - cron: "0 */8 * * *" # every 8 hours
 env:
