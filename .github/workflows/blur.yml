@@ -52,6 +52,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/download-artifact@v3
+      - uses: FedericoCarboni/setup-ffmpeg@v2
       - run: git pull origin master
       - run: npm install
       - run: node instagram.js
