@@ -1,4 +1,4 @@
-name: Create video
+name: Create videos
 
 on:
   push:
