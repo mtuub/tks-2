@@ -36,7 +36,17 @@ jobs:
           path: video.mp4
           retention-days: 1
 
-  upload-tiktok:
+  # upload-tiktok:
+  #   needs: render-video
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: actions/download-artifact@v3
+  #     - run: git pull origin master
+  #     - run: npm install
+  #     - run: node tiktok.js
+
+  upload-instagram:
     needs: render-video
     runs-on: ubuntu-latest
     steps:
@@ -44,4 +54,4 @@ jobs:
       - uses: actions/download-artifact@v3
       - run: git pull origin master
       - run: npm install
-      - run: node tiktok.js
+      - run: node instagram.js

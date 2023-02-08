@@ -3,5 +3,5 @@ node_modules
 .env
 public/info.json
 yt_auth
-
+artifact
 __pycache__

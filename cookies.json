@@ -1,0 +1,69 @@
+[
+    {
+        "key": "csrftoken",
+        "value": "dpaSKvY91thw7tN1lxFZuBr0m0Tbc3f4",
+        "expires": "2023-12-28T14:20:13.000Z",
+        "maxAge": 31449600,
+        "domain": "instagram.com",
+        "path": "/",
+        "secure": true,
+        "creation": "2022-12-29T14:20:11.895Z"
+    },
+    {
+        "key": "rur",
+        "value": "\"ASH\\05452954140049\\0541703859613:01f7b9eb2184c0fb6669192079c88d2fbf2ad4d7ad520f8968365eb264faf9d0f70631ab\"",
+        "domain": "instagram.com",
+        "path": "/",
+        "secure": true,
+        "httpOnly": true,
+        "creation": "2022-12-29T14:20:11.896Z",
+        "sameSite": "lax"
+    },
+    {
+        "key": "mid",
+        "value": "Y62iFwAAAAHpXeG9xTtfD6AQANLf",
+        "expires": "2024-12-28T14:20:13.000Z",
+        "maxAge": 63072000,
+        "domain": "instagram.com",
+        "path": "/",
+        "secure": true,
+        "creation": "2022-12-29T14:20:11.896Z"
+    },
+    {
+        "key": "ds_user_id",
+        "value": "52954140049",
+        "expires": "2023-03-29T14:20:13.000Z",
+        "maxAge": 7776000,
+        "domain": "instagram.com",
+        "path": "/",
+        "secure": true,
+        "creation": "2022-12-29T14:20:11.896Z"
+    },
+    {
+        "key": "ig_did",
+        "value": "2AF66889-9251-4ACC-9582-0AD9BCCAFBB6",
+        "expires": "2024-12-28T14:20:13.000Z",
+        "maxAge": 63072000,
+        "domain": "instagram.com",
+        "path": "/",
+        "secure": true,
+        "httpOnly": true,
+        "creation": "2022-12-29T14:20:11.896Z"
+    },
+    {
+        "key": "sessionid",
+        "value": "52954140049%3AGghCNkrkRumzvg%3A15%3AAYdrrkCz-WShqSRJy_Tw37Nzqm8f3ZmUTSL9ams36w",
+        "expires": "2023-12-29T14:20:13.000Z",
+        "maxAge": 31536000,
+        "domain": "instagram.com",
+        "path": "/",
+        "secure": true,
+        "httpOnly": true,
+        "creation": "2022-12-29T14:20:11.896Z"
+    },
+    {
+        "key": "ig_cb",
+        "value": "1",
+        "creation": "2022-12-29T14:20:11.897Z"
+    }
+]
