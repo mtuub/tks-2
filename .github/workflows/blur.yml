@@ -38,7 +38,7 @@ jobs:
   #         retention-days: 1
 
   upload-tiktok:
-    needs: render-video
+    # needs: render-video
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
