@@ -41,7 +41,7 @@ const glob = require("glob");
           ];
 
           comment(credentials, [...comments]).then((_) =>
-            console.log(`Commented on video for ${sign}`)
+            console.log(`Commented on video`)
           );
         }, 60000);
       });
