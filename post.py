@@ -11,5 +11,5 @@ tags = info["tags"]
 session_id = "99f7172fd207860427573f8795b5a8f3"
 
 file = './artifact/video.mp4'
-print(session_id)
-uploadVideo(session_id, file, title, tags, verbose=True)
+
+uploadVideo(session_id, file, title, tags)
