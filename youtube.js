@@ -1,6 +1,7 @@
 const { upload, comment } = require("youtube-videos-uploader");
 const fs = require("fs/promises");
 const { default: axios } = require("axios");
+const glob = require("glob");
 
 (async () => {
   const credentials = {
