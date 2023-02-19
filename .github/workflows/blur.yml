@@ -1,6 +1,7 @@
 name: Create videos
 
 on:
+  workflow_dispatch:
   push:
     branches: master
   # schedule:
@@ -38,7 +39,7 @@ jobs:
           retention-days: 1
 
   upload-tiktok:
-    # needs: render-video
+    needs: render-video
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
