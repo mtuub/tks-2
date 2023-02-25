@@ -63,12 +63,10 @@ jobs:
   upload-youtube:
     needs: render-video
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v3
       - uses: actions/download-artifact@v3
-      # - uses: dawidd6/action-download-artifact@v2
-      #   with:
-      #     run_id: 4215598643
       - run: git pull origin master
       - run: npm install
       - run: node youtube.js
