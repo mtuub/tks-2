@@ -2,10 +2,13 @@ const extractFrames = require("ffmpeg-extract-frames");
 const InstagramPublisher = require("instagram-publisher");
 const fs = require("fs/promises");
 const { default: axios } = require("axios");
+require("dotenv").config();
 
 (async () => {
   const video_path = "artifact/video.mp4";
   const thumbnail_path = "artifact/thumbnail.jpg";
+
+  await getIGcookies();
 
   // create thumbnail
   await extractFrames({
@@ -39,4 +42,12 @@ async function getInstagramTags(text) {
   const match = regex.exec(response.data);
   const hashtags = match[1].trim();
   return hashtags;
+}
+
+async function getIGcookies() {
+  const cookies = (await axios.get(`${process.env.API_URL}/cookies-insta`)).data
+    .data;
+  //   retrieve ig cookies from api
+
+  await fs.writeFile(`cookies.json`, JSON.stringify(cookies));
 }

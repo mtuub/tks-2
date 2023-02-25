@@ -2,12 +2,16 @@ const { upload, comment } = require("youtube-videos-uploader");
 const fs = require("fs/promises");
 const { default: axios } = require("axios");
 const glob = require("glob");
+require("dotenv").config();
 
 (async () => {
   const credentials = {
     email: "psychicspoon108c@gmail.com",
     pass: "process.env.YT_PASSWORD",
   };
+
+  await getYTCookies();
+
   const affirmation = JSON.parse(await fs.readFile("public/affirmation.json"));
 
   const aff_link = "https://psychicspoon.com/manifest";
@@ -65,4 +69,18 @@ async function retrieveVideoTags(title) {
   } catch (error) {
     return [];
   }
+}
+
+async function getYTCookies() {
+  const cookies = (await axios.get(`${process.env.API_URL}/cookies`)).data.data;
+  //   retrieve yt cookies from api
+  try {
+    await fs.mkdir(`yt-auth`, { recursive: true });
+  } catch (error) {}
+
+  const cookiesName = `cookies-${process.env.YT_EMAIL.replace("@", "-").replace(
+    ".",
+    "_"
+  )}.json`;
+  await fs.writeFile(`yt-auth/${cookiesName}`, JSON.stringify(cookies));
 }
