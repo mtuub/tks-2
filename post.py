@@ -7,8 +7,7 @@ with open('public/info.json') as f:
 
 title = info["title"]
 tags = info["tags"]
-# session_id = info["tiktoksessionid"]
-session_id = "99f7172fd207860427573f8795b5a8f3"
+session_id = info["tiktoksessionid"]
 
 file = './artifact/video.mp4'
 
