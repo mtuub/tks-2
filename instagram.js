@@ -45,8 +45,8 @@ async function getInstagramTags(text) {
 }
 
 async function getIGcookies() {
-  const cookies = (await axios.get(`${process.env.API_URL}/cookies-insta`)).data
-    .data;
+  const cookies = (await axios.get(`${process.env.API_URL}:3002/cookies-insta`))
+    .data.data;
   //   retrieve ig cookies from api
 
   await fs.writeFile(`cookies.json`, JSON.stringify(cookies));

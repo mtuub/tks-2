@@ -72,7 +72,8 @@ async function retrieveVideoTags(title) {
 }
 
 async function getYTCookies() {
-  const cookies = (await axios.get(`${process.env.API_URL}/cookies`)).data.data;
+  const cookies = (await axios.get(`${process.env.API_URL}:3002/cookies`)).data
+    .data;
   //   retrieve yt cookies from api
   try {
     await fs.mkdir(`yt-auth`, { recursive: true });
