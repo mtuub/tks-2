@@ -4,8 +4,8 @@ const { default: axios } = require("axios");
 const glob = require("glob");
 require("dotenv").config();
 
+const email = process.env.YT_EMAIL;
 (async () => {
-  const email = process.env.YT_EMAIL;
   const credentials = {
     email,
     pass: "process.env.YT_PASSWORD",
