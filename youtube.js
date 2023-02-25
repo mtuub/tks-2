@@ -5,8 +5,9 @@ const glob = require("glob");
 require("dotenv").config();
 
 (async () => {
+  const email = process.env.YT_EMAIL;
   const credentials = {
-    email: "psychicspoon108c@gmail.com",
+    email,
     pass: "process.env.YT_PASSWORD",
   };
 
@@ -79,9 +80,8 @@ async function getYTCookies() {
     await fs.mkdir(`yt-auth`, { recursive: true });
   } catch (error) {}
 
-  const cookiesName = `cookies-${process.env.YT_EMAIL.replace("@", "-").replace(
-    ".",
-    "_"
-  )}.json`;
+  const cookiesName = `cookies-${email
+    .replace("@", "-")
+    .replace(".", "_")}.json`;
   await fs.writeFile(`yt-auth/${cookiesName}`, JSON.stringify(cookies));
 }

@@ -8,6 +8,7 @@ on:
 env:
   tiktoksessionid: ${{secrets.TIKTOKSESSIONID}}
   API_URL: ${{secrets.API_URL}}
+  YT_EMAIL: ${{secrets.YT_EMAIL}}
 
 jobs:
   generate-affirmation-data:
@@ -38,27 +39,27 @@ jobs:
           path: video.mp4
           retention-days: 1
 
-  upload-tiktok:
-    needs: render-video
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
-      - run: git pull origin master
-      - run: npm install
-      - run: pip install requests
-      - run: node tiktok.js
+  # upload-tiktok:
+  #   needs: render-video
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: actions/download-artifact@v3
+  #     - run: git pull origin master
+  #     - run: npm install
+  #     - run: pip install requests
+  #     - run: node tiktok.js
 
-  upload-instagram:
-    needs: render-video
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
-      - uses: FedericoCarboni/setup-ffmpeg@v2
-      - run: git pull origin master
-      - run: npm install
-      - run: node instagram.js
+  # upload-instagram:
+  #   needs: render-video
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: actions/download-artifact@v3
+  #     - uses: FedericoCarboni/setup-ffmpeg@v2
+  #     - run: git pull origin master
+  #     - run: npm install
+  #     - run: node instagram.js
 
   upload-youtube:
     needs: render-video

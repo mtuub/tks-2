@@ -26,7 +26,7 @@ require("dotenv").config();
     caption: `${affirmation.affirmation}\n\n${tags}`,
   };
   const client = new InstagramPublisher({
-    email: "psychicspoon108c@gmail.com",
+    email: process.env.YT_EMAIL,
     password: "12345",
     verbose: true,
   });
