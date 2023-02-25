@@ -64,7 +64,7 @@ jobs:
   upload-youtube:
     needs: render-video
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v3
       - uses: actions/download-artifact@v3
