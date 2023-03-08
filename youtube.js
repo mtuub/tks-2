@@ -15,13 +15,33 @@ const email = process.env.YT_EMAIL;
 
   const affirmation = JSON.parse(await fs.readFile("public/affirmation.json"));
 
-  const aff_link = "https://psychicspoon.com/manifest";
+  const aff_link = "https://psychicspoon.com";
 
   const tags = await retrieveVideoTags(affirmation.affirmation);
 
+  const yt_tags = [
+    "#manifestation",
+    "#affirmation",
+    "#love",
+    "#wealth",
+    "#success",
+    "#lawofattraction",
+    "#abundance",
+  ];
+  const yt_tag = yt_tags[Math.floor(Math.random() * yt_tags.length)];
+
+  const taglines = [
+    "Manifest 100x Money",
+    "Manifest Love & Money",
+    "Expert Astrology Reading",
+    "Attract Love",
+    "Attract Your Life Partner",
+  ];
+  const tagline = taglines[Math.floor(Math.random() * taglines.length)];
+
   const data = {
     path: "artifact/video.mp4",
-    title: `${affirmation.affirmation} #manifestation #affirmation`,
+    title: `${affirmation.affirmation} ${yt_tag}`,
     description: `Tags: (${tags.join(", ")})`,
     isNotForKid: true,
   };
@@ -40,7 +60,7 @@ const email = process.env.YT_EMAIL;
           const comments = [
             {
               link: urls[0],
-              comment: `Manifest Love & Money Instantly: ${aff_link}`,
+              comment: `${tagline}: ${aff_link}`,
               pin: true,
             },
           ];
