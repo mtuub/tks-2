@@ -23,7 +23,8 @@ require("dotenv").config();
   const reel_data = {
     video_path,
     thumbnail_path,
-    caption: `${affirmation.affirmation}\n\n${tags}`,
+    caption: `Manifest Love, Success & Money: Link in Bio\n\n${tags}`,
+    location: "United States",
   };
   const client = new InstagramPublisher({
     email: process.env.YT_EMAIL,
